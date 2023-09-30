@@ -1,4 +1,6 @@
 /** @type {import('next').NextConfig} */
+
+const serverDomain = process.env.SERVER_DOMAIN;
 const nextConfig = {
   i18n: {
     locales: ['es'],
@@ -13,7 +15,7 @@ const nextConfig = {
   },
   images: {
     domains: [
-      process.env.SERVER_DOMAIN,
+      serverDomain ? serverDomain : undefined,
       'lh3.googleusercontent.com',
       'localhost',
       'tallerperrosur.cl',
